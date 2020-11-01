@@ -270,7 +270,7 @@ img {
     font-weight: 400;
 }
 
-/* --------- FOOTER -------- /*
+/* ------------------------------- FOOTER ------------------ /*
 
 /* FOOTER-CLASS */
 .footer-class {
@@ -282,6 +282,12 @@ img {
 .barra-footer a h1 {
     font-size: 3.5rem;
     padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .barra-footer .navegacion {
+        padding-bottom: 2.2rem;
+    }
 }
 
 /* ------------------------------------------------------------ NOSOTROS.HTML --------------------------- */
