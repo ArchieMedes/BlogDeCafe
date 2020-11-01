@@ -1,0 +1,374 @@
+/* ----------- PAUL IRISH - BOX SIZING - NORMALIZE ------------- */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* Con esto escalamos TODAS LAS MEDIDAS, es decir, TODA LA PÁGINA, ahora 1rem = 10px */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* -------------PREFERENCIAS: FUENTES ------------ */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2; /* Interlineado */
+}
+
+/* -------- SELECTORES GLOBALES ---------- */
+h1, h2, h3, h4 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+/* ----------FIN PREFERENCIAS: FUENTES ------------ */
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /* Con esto hacemos responsivas las imágenes */
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 85%;
+}
+
+/* --------- UTILIDADES ------------ */
+.no-margin {
+    margin: 0;
+}
+
+.texto-centrado {
+    text-align: center;
+}
+
+/* --------- FIN UTILIDADES ------ */
+
+/* --------- GRID ---------------- */
+@media (min-width: 768px) {
+    .grid { /* GRID sirve para darle formato de celdas a cualquier cosa que vaya a estar dentro de una etiqueta con esta clase */
+        display: flex; /* para colocar elementos uno frente al otro */
+        justify-content: space-between; /* para separarlos entre sí de manera distribuida */
+        flex-wrap: wrap; /* para que cuando se llene el espacio al 100% de la pagina, se baje una fila en lugar de extenderla */
+    }
+    .centrar-columnas {
+        justify-content: center;
+    }
+    .columnas-4 {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .columnas-6 {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8 {
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columnas-10 {
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+    .columnas-12 {
+        flex: 0 0 100%;
+    }
+   
+}
+
+/* --------- BOTONES ------------- */
+.btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 2rem 0;
+    padding: 1rem 3rem;
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        font-size: 1.7rem;
+        display: inline-block; /* con esto el ANCHO lo define EL PADDING */
+        flex: 0 0 auto;
+    }
+    
+}
+
+.btn-primario {
+    background-color: black;
+}
+
+.btn-secundario {
+    background-color: rgb(100, 51, 51);
+}
+/* ------- FIN SELECTORES GLOBALES -------- /*
+
+
+/* ------- ENCABEZADO -------- */
+/* ---- ENCABEZADO: FONDO ----- */
+
+.encabezado {
+    background-image: url(../img/banner.jpg); /* Traemos la imagen al fondo */
+    background-position: center center; /* Para centrar la imagen */
+    background-size: cover; /* el valor de COVER le da ese efecto de fondo estático */
+    height: 60rem;
+}
+
+/* ------ LOGO ENLACE ---- */
+.barra a h1 {
+    font-weight: 400;
+}
+
+.barra a h1 span {
+    font-weight: 700;
+}
+
+.barra a {
+    color:white;
+    text-align: center;
+    
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Para alinear VERTICALMENTE con el CENTRO */
+    }
+}
+
+/* ---- NAVEGACION ----- */
+.navegacion a {
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex;
+    }
+    .navegacion a {
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type {
+        margin-right: 0;
+    }
+}
+
+/* ---- TEXTO ENCABEZADO --- */
+.texto-encabezado {
+    color: white;
+    margin-top: 10rem;
+}
+
+@media (min-width: 302px) {
+    .texto-encabezado {
+        margin-top: 12rem;
+    } 
+}
+
+@media (min-width: 768px) {
+    .texto-encabezado {
+        margin-top: 21.6rem;
+    } 
+}
+
+.texto-encabezado p {
+    font-size: 2.2rem;
+}
+
+/* ---------------------------------------- CONTENEDOR PRINCIPAL ---------------------------------------- */
+.contenedor-principal {
+    display: flex;
+    flex-wrap: wrap; /* Para que no se extienda hacia los lados */
+}
+
+.contenido-principal-blog,
+.barra-lateral {
+    flex: 0 0 100%; /* Esto hace que los elementos como los botones sean responsivos */
+}
+
+.barra-lateral {
+    order: -1;
+}
+
+
+@media (min-width: 768px) {
+    .contenedor-principal {
+        justify-content: space-between;        
+    }
+    .contenido-principal-blog {
+        flex-basis: 66.6%;
+    }
+    .barra-lateral {
+        flex-basis: calc(33.4% - 4rem);
+        order: 2;
+    }
+    
+}
+
+
+/* ------------- BLOG ----------------- */
+
+/* ARTICULOS: APARIENCIA */
+.articulo-blog {
+    margin-bottom: 2rem;
+    border-bottom: 0.1rem solid #e1e1e1;
+
+}
+
+.articulo-blog:last-of-type {
+    border-bottom: none;
+    margin-bottom: 4rem;
+}
+
+/* ------------ BARRA LATERAL ----------- */
+
+/* LISTA DE CURSOS */
+.cursos-lista {
+    list-style: none; /* QUITA LA VIÑETA */
+    padding: 0; /* QUITA LA SANGRÍA POR DEFAULT */
+}
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.curso:last-of-type {
+    border-bottom: none;
+}
+
+.curso p {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.curso p span {
+    font-weight: 400;
+}
+
+/* --------- FOOTER -------- /*
+
+/* FOOTER-CLASS */
+.footer-class {
+    background-color: black;
+    padding: 2rem 0;
+}
+
+/* BARRA FOOTER */
+.barra-footer a h1 {
+    font-size: 3.5rem;
+    padding: 1rem 0;
+}
+
+/* ------------------------------------------------------------ NOSOTROS.HTML --------------------------- */
+.imagen-nosotros {
+    padding-top: 1rem;
+}
+
+/* -------------------------------------------------- CURSOS.HTML ----Gratis------------------------------------- */
+.barra-cursos {
+    margin-bottom: 2rem;
+    border-bottom: 0.1rem solid #e1e1e1;
+}
+
+.barra-cursos:last-of-type {
+    border-bottom: none;
+    margin-bottom: 10rem;
+}
+
+.barra-cursos p {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.barra-cursos p span,
+.barra-cursos p.descripcion {
+    font-weight: 400;
+}
+
+/* --------------------------------------------- ARTICULO.HTML -------------------------- */
+.imagen-articulo {
+    padding-top: 1rem;
+}
+
+.texto-articulo {
+    margin: 2rem 0;
+}
+
+.texto-articulo p:last-of-type {
+    margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .texto-articulo {
+        margin-top: 0;
+    }
+}
+
+/* ------------------------------- CONTACTO.HTML ---------------------------------- */
+.formulario-contacto {
+    background-color: white;
+    padding: 5rem;
+}
+
+@media (min-width: 768px) {
+    .formulario-contacto {
+        margin-top: -10rem;
+    }   
+}
+
+.formulario-contacto .campo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.formulario-contacto .campo label {
+    flex: 0 0 8rem;
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea {
+    flex: 1 0 0; /*sí crece mientras puedas */
+    border: 1px solid #e1e1e1; /*borde al recuadro del INPUT */
+    padding: 1rem; /* le da un poco de más cuerpo a los input*/
+    min-width: 3rem;
+}
+
+.formulario-contacto .campo textarea{
+    height: 20rem;
+}
+
+@media (min-width: 768px) {
+    .formulario-contacto .campo.enviar {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
